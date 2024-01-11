@@ -1,7 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dockerCommand
+import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 
 version = "2023.05"
 
