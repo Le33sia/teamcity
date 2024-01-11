@@ -23,10 +23,10 @@ object Teamcity_Build : BuildType({
                 source = file {
                     path = "Dockerfile"
                 }
-                platform = DockerCommandStep.ImagePlatform.Linux
-                namesAndTags = "myImage:1.0"}
         }
-    }
+   }
+}
+
     triggers {
         vcs {
         }
