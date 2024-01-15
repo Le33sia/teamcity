@@ -11,10 +11,10 @@ project {
     buildType(Build)
     buildType(Test)
 
-    sequential {
-        buildType(Build)
-        buildType(Test)
-    }
+    //sequential {
+        //buildType(Build)
+        //buildType(Test)
+    //}
 }
  
 object Build : BuildType({
@@ -48,13 +48,9 @@ object Test : BuildType({
     id("Test")
     name = "Test"
 
-    //#dependencies {
-        //#dependency(Build) {
-           // #snapshot {
-               // #onDependencyFailure = FailureAction.FAIL_TO_START
-            //#}
-       // #}
-   // #}
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 
 
 
@@ -66,5 +62,18 @@ object Test : BuildType({
                 echo "Testing stage is running..."
             """.trimIndent()        }
     }
+
+    dependencies {
+        snapshot (Build){}
+              }
+
+    triggers {
+        vcs {
+        }
+    }
+
+
+
+
 })
     
