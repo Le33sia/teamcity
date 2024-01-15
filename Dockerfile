@@ -1,4 +1,4 @@
-# Use the official Node.js 14 image
+# Node.js 14 image
 FROM node:14
 
 # Create app directory
