@@ -27,11 +27,6 @@ object Teamcity_Build : BuildType({
                 }
             }
         }
-
-        script {
-            name = "Run Docker Container"
-            scriptContent = "docker run -d my_docker_image:latest"
-        }
     }
 
     triggers {
