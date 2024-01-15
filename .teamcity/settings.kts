@@ -54,7 +54,7 @@ object Test : BuildType({
         script {
             name = "Testing"
             scriptContent = """
-                echo "Deploying application to production..."
+                echo "Testing stage is running..."
             """.trimIndent()        }
     }
 })
