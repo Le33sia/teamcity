@@ -48,13 +48,13 @@ object Test : BuildType({
     id("Test")
     name = "Test"
 
-    #dependencies {
-        #dependency(Build) {
-            #snapshot {
-                #onDependencyFailure = FailureAction.FAIL_TO_START
-            #}
-        #}
-    #}
+    //#dependencies {
+        //#dependency(Build) {
+           // #snapshot {
+               // #onDependencyFailure = FailureAction.FAIL_TO_START
+            //#}
+       // #}
+   // #}
 
 
 
