@@ -51,7 +51,10 @@ object Test : BuildType({
         }
     }
     steps {
-        scriptContent = "echo 'It\'s testing phase'"
+        script {
+            name = "Testing"
+            scriptContent = "echo 'It\'s testing phase'"
+        }
     }
 })
     
