@@ -10,6 +10,11 @@ project {
  
     buildType(Build)
     buildType(Test)
+
+    sequential {
+        buildType(Build)
+        buildType(Test)
+    }
 }
  
 object Build : BuildType({
@@ -51,12 +56,8 @@ object Test : BuildType({
         }
     }
 
-    triggers {
-        build {
-            id = "${Build.id}"
-            successfulOnly = true
-        }
-    }
+
+
     
     steps {
         script {
