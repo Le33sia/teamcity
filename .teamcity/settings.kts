@@ -50,6 +50,12 @@ object Test : BuildType({
             }
         }
     }
+    triggers {
+        vcs {
+            enabled = true
+            triggerRules = "+:refs/heads/*"  // Adjust as needed
+        }
+    }
     steps {
         script {
             name = "Testing"
