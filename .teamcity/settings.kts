@@ -53,21 +53,3 @@ object Teamcity_Test : BuildType({
     }
 })
 
-object Teamcity_Cleanup : BuildType({
-    id("Cleanup")
-    name = "Cleanup Stage"
-
-    dependencies {
-        dependency(Teamcity_Test) {
-            snapshot {
-            }
-        }
-    }
-
-    steps {
-        script {
-            name = "Cleanup Docker"
-            scriptContent = "docker system prune -af"
-        }
-    }
-})
