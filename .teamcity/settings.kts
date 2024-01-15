@@ -5,12 +5,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 
 version = "2023.05"
 
-project {
-    buildType(Teamcity_Build)
-    buildType(Teamcity_Test)
-    buildType(Teamcity_Cleanup)
-}
-
 object Teamcity_Build : BuildType({
     id("Build")
     name = "Build"
@@ -63,17 +57,17 @@ object Teamcity_Cleanup : BuildType({
     id("Cleanup")
     name = "Cleanup Stage"
 
-    steps {
-        script {
-            name = "Cleanup Docker"
-            scriptContent = "docker system prune -af"
-        }
-    }
-
     dependencies {
         dependency(Teamcity_Test) {
             snapshot {
             }
+        }
+    }
+
+    steps {
+        script {
+            name = "Cleanup Docker"
+            scriptContent = "docker system prune -af"
         }
     }
 })
