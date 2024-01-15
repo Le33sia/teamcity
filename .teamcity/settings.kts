@@ -7,11 +7,11 @@ version = "2023.05"
  
 project {
  
-    buildType(Teamcity_Build)
-    buildType(Teamcity_Test)
+    buildType(Build)
+    buildType(Test)
 }
  
-object Teamcity_Build : BuildType({
+object Build : BuildType({
     id("Build")
     name = "Build"
  
@@ -38,22 +38,19 @@ object Teamcity_Build : BuildType({
     }
 })
 
-object Teamcity_Test : BuildType({
+object Test : BuildType({
     id("Test")
     name = "Test"
 
     dependencies {
-        dependency(Teamcity_Build) {
+        dependency(Build) {
             snapshot {
                 onDependencyFailure = FailureAction.FAIL_TO_START
             }
         }
     }
-
     steps {
-        script {
-            name = "Testing"
-            scriptContent = "echo 'It\'s testing phase'"
-        }
+        scriptContent = "echo 'It\'s testing phase'"
     }
 })
+    
