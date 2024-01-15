@@ -34,22 +34,5 @@ object Teamcity_Build : BuildType({
     }
 })
 
-object Teamcity_Test : BuildType({
-    id("Test")
-    name = "Testing Stage"
 
-    dependencies {
-        dependency(Teamcity_Build) {
-            snapshot {
-            }
-        }
-    }
-
-    steps {
-        script {
-            name = "Run Testing Script"
-            scriptContent = "echo 'Running tests in the testing stage...'"
-        }
-    }
-})
 
