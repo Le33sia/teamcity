@@ -53,8 +53,9 @@ object Test : BuildType({
     steps {
         script {
             name = "Testing"
-            scriptContent = "echo 'It\'s testing phase'"
-        }
+            scriptContent = """
+                echo "Deploying application to production..."
+            """.trimIndent()        }
     }
 })
     
