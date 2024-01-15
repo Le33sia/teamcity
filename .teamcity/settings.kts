@@ -50,12 +50,14 @@ object Test : BuildType({
             }
         }
     }
+
     triggers {
-        vcs {
-            enabled = true
-            triggerRules = "+:refs/heads/*"  // Adjust as needed
+        build {
+            id = "${Build.id}"
+            successfulOnly = true
         }
     }
+    
     steps {
         script {
             name = "Testing"
